@@ -44,3 +44,10 @@ Copy-Item -Path ".venv\Lib\site-packages\*" -Destination "dist\__main__\_interna
 Copy-Item -Path "token.txt" -Destination "dist\__main__\token.txt"
 Copy-Item -Path "icon.ico" -Destination "dist\__main__\_internal\icon.ico"
 ```
+
+
+## Remote Desktop
+
+If using RDP to the source machine, make sure to NOT configure remote audio.
+
+![Remote Desktop Protocol required configuration](documentation/rdp.png)
