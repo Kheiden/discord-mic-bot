@@ -35,13 +35,8 @@ uv add -r requirements.txt
 .\discord-mic-bot-uv.cmd
 ```
 
-If fail to install
-[PyNaCl](https://github.com/pyca/pynacl/issues/637#issuecomment-710127304) or
-[NumPy](https://developercommunity.visualstudio.com/content/problem/1207405/fmod-after-an-update-to-windows-2004-is-causing-a.html)
-on Windows, you may need to temporarily downgrade to Python 3.8 until those
-problems are fixed.
-
-If on Linux, you also need to install libopus and libportaudio.
+### Linux
+You may also need to install libopus and libportaudio.
 
 ## Configuration
 
@@ -50,11 +45,14 @@ If on Linux, you also need to install libopus and libportaudio.
 
 If a new bot needs to be created, follow the steps [here](documentation/README.md)
 
-## Usage
+## Usage - Windows
 
-For Linux or macOS users, `discord-mic-bot` is the entry point.
+`discord-mic-bot-uv.cmd` is the entry point.
 
-For Windows users, `discord-mic-bot.cmd` is the entry point.
+## Usage - Linux
+
+`discord-mic-bot` is the entry point.
+
 
 ## Monitoring loudness
 
