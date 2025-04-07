@@ -45,6 +45,16 @@ Copy-Item -Path "token.txt" -Destination "dist\__main__\token.txt"
 Copy-Item -Path "icon.ico" -Destination "dist\__main__\_internal\icon.ico"
 ```
 
+Remove extra cache files
+```
+python -Bc "import pathlib; [p.unlink() for p in pathlib.Path('.').rglob('*.py[co]')]"
+python -Bc "import pathlib; [p.rmdir() for p in pathlib.Path('.').rglob('__pycache__')]"
+```
+
+## Release
+
+Create a .7z file
+Create a new Github release
 
 ## Remote Desktop
 
