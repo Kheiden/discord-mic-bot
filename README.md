@@ -29,21 +29,17 @@ Add to environment variable `PATH`
 %SYSTEMROOT%\System32\WindowsPowerShell\v1.0
 ```
 
+Install uv
+```sh
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+```
 
+Install discord-mic-bot dependencies
 ```sh
 uv init
 uv venv
 uv add -r requirements.txt
 .\discord-mic-bot-uv.cmd
-```
-
-First, you need to install Python 3.10 or later version and download
-discord-mic-bot.
-
-Then, in terminal or command prompt, type:
-```sh
-cd /path/to/discord-mic-bot
-pip3 install -r requirements.txt --upgrade
 ```
 
 If fail to install
@@ -68,7 +64,7 @@ You need to obtain a bot token to log into Discord's server.
 
 4. Click on "Copy Token".
 
-5. Open the file named `token.txt` and paste your token inside that file.
+5. Create a new file named `token.txt` and paste your token inside that file.
 
 ## Inviting the bot to a Discord server
 
