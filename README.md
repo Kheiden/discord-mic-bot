@@ -22,6 +22,21 @@ Hey Discord developers, listen to these feedbacks! Shame on you!
 
 ## Installation
 
+### uv - Windows
+
+Add to environment variable `PATH`
+```sh
+%SYSTEMROOT%\System32\WindowsPowerShell\v1.0
+```
+
+
+```sh
+uv init
+uv venv
+uv add -r requirements.txt
+.\discord-mic-bot-uv.cmd
+```
+
 First, you need to install Python 3.10 or later version and download
 discord-mic-bot.
 
