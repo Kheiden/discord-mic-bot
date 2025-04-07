@@ -14,6 +14,10 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import dmb
+import ctypes
+myappid = u'com.kheiden.com.discord_stream_bot'
+ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+
 
 if __name__ == "__main__":
     dmb.main()
