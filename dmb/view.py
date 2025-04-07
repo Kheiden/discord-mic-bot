@@ -11,6 +11,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+import os
 import asyncio
 import math
 import tkinter
@@ -32,6 +33,8 @@ class View:
         self.running = True
 
         self.root = tkinter.Tk()
+        icon_path = os.path.join(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "documentation"), "icon.ico")
+        self.root.iconbitmap(icon_path)
         self.root.bind('<Destroy>', self.on_destroy)
 
         ttk_style = tkinter.ttk.Style()
