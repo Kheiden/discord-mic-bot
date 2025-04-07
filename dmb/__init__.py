@@ -56,6 +56,8 @@ def main() -> None:
     except (FileNotFoundError, ValueError):
         print('Unable to find a Discord bot token.')
         print('Please put your Discord bot token in token.txt.')
+        print('Press Enter to quit')
+        input('')
         return
 
     model_thread = ModelThread(discord_bot_token)
