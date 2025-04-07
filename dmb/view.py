@@ -18,6 +18,7 @@ import tkinter
 import tkinter.messagebox
 import tkinter.ttk
 import typing
+from PIL import Image, ImageTk
 
 import discord  # type: ignore
 if typing.TYPE_CHECKING:
@@ -31,9 +32,8 @@ class View:
         self.m = m
         self.loop = loop
         self.running = True
-
         self.root = tkinter.Tk()
-        icon_path = os.path.join(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "documentation"), "icon.ico")
+        icon_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "icon.ico")
         self.root.iconbitmap(icon_path)
         self.root.bind('<Destroy>', self.on_destroy)
 
@@ -54,7 +54,7 @@ class View:
         self.fec_enabled = tkinter.BooleanVar(self.root, True)
         self.muted = tkinter.BooleanVar(self.root, False)
 
-        self.root.title('Discord Mic Bot')
+        self.root.title('Discord Stream Bot')
         self.frame = tkinter.ttk.Frame(self.root)
         self.frame.grid(column=0, row=0, sticky=tkinter.NSEW)
 
