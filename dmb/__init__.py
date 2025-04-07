@@ -19,54 +19,54 @@ from . import view
 
 
 class ModelThread(threading.Thread):
-    def __init__(self, discord_bot_token: str) -> None:
-        super().__init__()
-        self.discord_bot_token = discord_bot_token
-        self.init_finished: concurrent.futures.Future[model.Model] = concurrent.futures.Future()
+  def __init__(self, discord_bot_token: str) -> None:
+    super().__init__()
+    self.discord_bot_token = discord_bot_token
+    self.init_finished: concurrent.futures.Future[model.Model] = concurrent.futures.Future()
 
-    def run(self) -> None:
-        loop = asyncio.new_event_loop()
-        loop.run_until_complete(self._run(loop))
+  def run(self) -> None:
+    loop = asyncio.new_event_loop()
+    loop.run_until_complete(self._run(loop))
 
-    async def _run(self, loop: asyncio.AbstractEventLoop) -> None:
-        m = model.Model(self.discord_bot_token, loop)
-        self.init_finished.set_result(m)
-        await m.run()
+  async def _run(self, loop: asyncio.AbstractEventLoop) -> None:
+    m = model.Model(self.discord_bot_token, loop)
+    self.init_finished.set_result(m)
+    await m.run()
 
 
 class UIThread:
-    def __init__(self, m: model.Model) -> None:
-        self.m = m
+  def __init__(self, m: model.Model) -> None:
+    self.m = m
 
-    def run(self) -> None:
-        loop = asyncio.new_event_loop()
-        loop.run_until_complete(self._run(loop))
+  def run(self) -> None:
+    loop = asyncio.new_event_loop()
+    loop.run_until_complete(self._run(loop))
 
-    async def _run(self, loop: asyncio.AbstractEventLoop) -> None:
-        v = view.View(self.m, loop)
-        await v.run()
+  async def _run(self, loop: asyncio.AbstractEventLoop) -> None:
+    v = view.View(self.m, loop)
+    await v.run()
 
 
 def main() -> None:
-    try:
-        with open('token.txt', 'r') as token_file:
-            discord_bot_token = token_file.read().strip()
-        if not discord_bot_token:
-            raise ValueError
-    except (FileNotFoundError, ValueError):
-        print('Unable to find a Discord bot token.')
-        print('Please put your Discord bot token in token.txt.')
-        print('Press Enter to quit')
-        input('')
-        return
+  try:
+    with open('token.txt', 'r') as token_file:
+      discord_bot_token = token_file.read().strip()
+    if not discord_bot_token:
+      raise ValueError
+  except (FileNotFoundError, ValueError):
+    print('Unable to find a Discord bot token.')
+    print('Please put your Discord bot token in token.txt.')
+    print('Press Enter to quit')
+    input('')
+    return
 
-    model_thread = ModelThread(discord_bot_token)
-    model_thread.start()
-    m = model_thread.init_finished.result()
+  model_thread = ModelThread(discord_bot_token)
+  model_thread.start()
+  m = model_thread.init_finished.result()
 
-    try:
-        ui_thread = UIThread(m)
-        ui_thread.run()
-    finally:
-        m.stop()
-        model_thread.join()
+  try:
+    ui_thread = UIThread(m)
+    ui_thread.run()
+  finally:
+    m.stop()
+    model_thread.join()

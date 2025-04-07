@@ -16,4 +16,4 @@
 import dmb
 
 if __name__ == "__main__":
-    dmb.main()
+  dmb.main()
