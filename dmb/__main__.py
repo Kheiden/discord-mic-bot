@@ -1,8 +1,5 @@
 #!/usr/bin/env python3
 
-# discord-mic-bot -- Discord bot to connect to your microphone
-# Copyright (C) 2020  Star Brilliant
-#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or

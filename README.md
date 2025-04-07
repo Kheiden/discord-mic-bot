@@ -10,7 +10,7 @@ This Discord bot connects to a stereo microphone on your computer, so you can ha
 
 Discord transmits only mono sound to voice channel, which makes it a bad
 experience in certain cases.
-However, bot can transmit stereo sound to voice channel. Thus, you can connect
+However, a bot can transmit stereo sound to voice channel. This means you can connect
 to your party channel as a bot. (You will need an admin to approve.)
 
 
@@ -28,11 +28,11 @@ Install uv
 powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 ```
 
-Install discord-mic-bot dependencies
+Install dependencies
 ```sh
 uv venv
 uv add -r requirements.txt
-.\discord-mic-bot-uv.cmd
+.\run.cmd
 ```
 
 ### Linux
@@ -47,11 +47,11 @@ If a new bot needs to be created, follow the steps [here](documentation/README.m
 
 ## Usage - Windows
 
-`discord-mic-bot-uv.cmd` is the entry point.
+`run.cmd` is the entry point.
 
 ## Usage - Linux
 
-`discord-mic-bot` is the entry point.
+`run` is the entry point.
 
 
 ## Monitoring loudness
