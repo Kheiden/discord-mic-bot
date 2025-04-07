@@ -1,4 +1,4 @@
-# discord-mic-bot
+# discord-stream-bot
 
 Enable stereo sound in a discord channel.
 
@@ -9,18 +9,10 @@ This Discord bot connects to a stereo microphone on your computer, so you can ha
 ## Description
 
 Discord transmits only mono sound to voice channel, which makes it a bad
-experience if you want to sing karaoke or play an instrument in a voice party.
+experience in certain cases.
 However, bot can transmit stereo sound to voice channel. Thus, you can connect
 to your party channel as a bot. (You will need an admin to approve.)
 
-Hey Discord developers, listen to these feedbacks! Shame on you!
-- [2018-12-28: Stereo audio](https://support.discord.com/hc/en-us/community/posts/360036186992-Stereo-audio)
-- [2019-07-28: Allow users to have stereo mic output as an option](https://support.discord.com/hc/en-us/community/posts/360048093091-Allow-users-to-have-stereo-mic-output-as-an-option-)
-- [2019-08-25: XLR stereo support](https://support.discord.com/hc/en-us/community/posts/360050181312-XLR-stereo-support)
-- [2019-09-09: Update your audio codec to allow for stereo mic setups](https://support.discord.com/hc/en-us/community/posts/360050373871-Update-your-audio-codec-to-allow-for-stereo-mic-setups)
-- [2020-01-14: Make stereo in Discord calls](https://support.discord.com/hc/en-us/community/posts/360056292532-Make-stereo-in-Discord-calls)
-- [2020-06-08: Stereo voice (for music DJ, music lesson, etc.)](https://support.discord.com/hc/en-us/community/posts/360068101212-Stereo-voice-for-music-DJ-music-lesson-etc-)
-- [2020-10-25: Stereo mic support](https://support.discord.com/hc/en-us/community/posts/360052098693-Stereo-mic-support)
 
 ## Installation
 
@@ -52,42 +44,12 @@ problems are fixed.
 
 If on Linux, you also need to install libopus and libportaudio.
 
-## Obtaining a bot token
+## Configuration
 
-You need to obtain a bot token to log into Discord's server.
+0) Obtain the token from an existing bot.
+1) Add the token to `token.txt`
 
-1. Go to <https://discord.com/developers/applications> and click on "New
-   Application".
-
-2. Inside the settings panel of your new application, click on "Bot".
-
-3. Create a new bot. When asked about permissions, simply leaving blank is
-   enough.
-
-4. Click on "Copy Token".
-
-5. Create a new file named `token.txt` and paste your token inside that file.
-
-## Inviting the bot to a Discord server
-
-Note: You need to have the permission to invite a bot to the destination server.
-If you don't have such a permission, the destination server **will not be
-shown** in step 4. You can also ask an administrator who has such a permission
-to help you invite your bot.
-
-1. Go to <https://discord.com/developers/applications> and click on your already
-   created application.
-
-2. Click on "Copy Client ID".
-
-3. Go to
-   ```
-   https://discord.com/oauth2/authorize?client_id=<CLIENT_ID>&permissions=3145728&scope=bot
-   ```
-   (Replace `<CLIENT_ID>` with your Client ID)
-
-4. Choose your destination server. Then click "Authorize".
-
+If a new bot needs to be created, follow the steps [here](documentation/README.md)
 
 ## Usage
 
@@ -137,6 +99,6 @@ along with this program.
 
 ## Acknowledgment
 
-This program is inspired by (but not a fork from)
+This program is forked from [discord-mic-bot](https://github.com/m13253/discord-mic-bot) inspired by (but not a fork from)
 [discord-audio-pipe](https://github.com/QiCuiHub/discord-audio-pipe).
 Thank you QiCuiHub!
