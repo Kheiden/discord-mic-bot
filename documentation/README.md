@@ -35,3 +35,12 @@ to help you invite your bot.
    (Replace `<CLIENT_ID>` with your Client ID)
 
 4. Choose your destination server. Then click "Authorize".
+
+## Binary Build
+After
+```
+uv run pyinstaller --paths=.venv/Lib/site-packages --icon=icon.ico dmb/__main__.py
+Copy-Item -Path ".venv\Lib\site-packages\*" -Destination "dist\__main__\_internal" -Recurse
+Copy-Item -Path "token.txt" -Destination "dist\__main__\token.txt"
+Copy-Item -Path "icon.ico" -Destination "dist\__main__\_internal\icon.ico"
+```
