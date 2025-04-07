@@ -4,7 +4,7 @@ Enable stereo sound in a discord channel.
 
 This Discord bot connects to a stereo microphone on your computer, so you can have stereo sound in your channels.
 
-![Screenshot](screenshot.png)
+![Screenshot](documentation/screenshot.png)
 
 ## Description
 
@@ -30,7 +30,6 @@ powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | ie
 
 Install discord-mic-bot dependencies
 ```sh
-uv init
 uv venv
 uv add -r requirements.txt
 .\discord-mic-bot-uv.cmd
