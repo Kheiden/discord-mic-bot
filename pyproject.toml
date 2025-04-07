@@ -1,0 +1,12 @@
+[project]
+name = "discord-mic-bot"
+version = "0.1.0"
+description = "Fork of m13253/discord-mic-bot "
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "discord-py[voice]==2.5.*",
+    "numpy>=2.2.4",
+    "scipy>=1.15.2",
+    "sounddevice>=0.5.1",
+]
